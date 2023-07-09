@@ -10,8 +10,7 @@ function App() {
     const [notes,setNote]=React.useState([])
     function addNote(params) {
         setNote(prevNotes => {
-            const newNote={key:notes.length,id:notes.length,...params}
-            return [...prevNotes,newNote]
+            return [...prevNotes,params]
         })
     }
 
@@ -27,8 +26,8 @@ function App() {
     <div>
         <Heading />
         <TakeNote onClick={addNote}/>
-        {notes.map( (note) =>{
-            return <Note key = {note.key} id={note.id} title = {note.title} content = {note.content} onClick={deleteNote}/>
+        {notes.map( (note,index) =>{
+            return <Note key = {index} id={index} title = {note.title} content = {note.content} onClick={deleteNote}/>
         })}
         <Footer />
     </div>
