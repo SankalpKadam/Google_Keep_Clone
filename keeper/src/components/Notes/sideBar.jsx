@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import DeleteIcon from '@mui/icons-material/Delete';
-function SideBar(params) {
+function SideBar(props) {
     const [isActive, setActive]=useState("Notes");
     function clickHandler(event){
         const id=event.target.id;
         ( id === "Notes")?setActive("Notes"):setActive("Trash");
+        props.onClick(id);
     }
     return (
         <div className="sideBar">

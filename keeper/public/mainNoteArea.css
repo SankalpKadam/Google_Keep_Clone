@@ -13,7 +13,7 @@
     outline: none;
 }
 
-
+/*Sidebar component*/
 .sideBar{
     display: flex;
     flex-direction: row;
@@ -21,7 +21,15 @@
     border-bottom: 2px solid #dadce0;
 }
 
-.mainArea{
-    display: flex;
-    flex-direction: row;
+/*DisplayNotes component*/
+.displayNotes{
+    align-items: center;
+    text-align: center;
+}
+
+.showWhenNoNotes{
+    margin-top: 10%;
+    color: grey;
+    font-size: 1.5rem !important;
+    font-weight: bolder;
 }
