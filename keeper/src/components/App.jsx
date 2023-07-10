@@ -8,7 +8,7 @@ import Trash from "./Trash.jsx";
 function App() {
     const [trashClicked, setTrashActive] = useState("Notes")
     function trashWasClicked(params){
-        console.log(params);
+        // console.log(params);
         (params==="Trash") ? setTrashActive("Trash") : setTrashActive("Notes")  
     }
     const [notes, setNotes]=useState([]);
@@ -16,9 +16,17 @@ function App() {
     function addNote(params){
         console.log(params);
         setNotes(prevNotes => {
-            return [...prevNotes,params]
+            return [params,...prevNotes]
         })
         setIsNote(true)
+    }
+    function removeNote(params){
+        console.log(params);
+        setNotes(prevNotes=>{
+            return (prevNotes.filter((prevNotes,index)=>{
+                return index !== params;
+            }))
+        })
     }
     return (
         <div>
@@ -26,7 +34,7 @@ function App() {
             <SideBar onClick={trashWasClicked}/>
             {(trashClicked==="Trash") ?<Trash />:<div>
             <TakeNote onAddClick={addNote}/>
-            <DisplayNotes notesToDisplay={notes} isNote={isNote}/>
+            <DisplayNotes notesToDisplay={notes} isNote={isNote} deleteNote={removeNote}/>
             </div>}
             
         </div>

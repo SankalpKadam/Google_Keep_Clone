@@ -22,14 +22,50 @@
 }
 
 /*DisplayNotes component*/
-.displayNotes{
-    align-items: center;
-    text-align: center;
-}
 
 .showWhenNoNotes{
     margin-top: 10%;
     color: grey;
     font-size: 1.5rem !important;
     font-weight: bolder;
+
+    align-items: center;
+    text-align: center;
 }
+
+/*Note component*/
+
+.singleNote{
+    background: #fff;
+  border-radius: 7px;
+  border:1px solid #dadce0;
+  padding: 10px;
+  width: 240px;
+  margin: 16px;
+  float: left;
+}
+
+.singleNote input {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    white-space: pre-wrap;
+    border: none;
+    width: 100%;
+    word-wrap: break-word;
+  }
+.singleNote textarea {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    border: none;
+    width: 100%;
+    outline: none;
+  }
+
+  .actionIcons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    float: right;
+  }

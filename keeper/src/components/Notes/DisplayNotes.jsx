@@ -14,7 +14,9 @@ function DisplayNotes(props) {
                 Notes you add appear here
             </p>
             </div>
-        :<Note/>}
+        :props.notesToDisplay.map((note,index)=>{
+            return <Note key={index} id={index} Title={note.Title} Content ={note.Content} deleteNote={props.deleteNote}/>
+        })}
         </div>
     );
 }
