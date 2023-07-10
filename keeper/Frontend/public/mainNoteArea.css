@@ -1,0 +1,71 @@
+.createNewNote{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    box-shadow: 0px 0px 4px 4px #eee;
+}
+.createNewNote input, textarea{
+    font-size: 1.5rem;
+    border: none;
+    margin: 0.5rem 0.5rem;
+    outline: none;
+}
+
+/*Sidebar component*/
+.sideBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 2px solid #dadce0;
+}
+
+/*DisplayNotes component*/
+
+.showWhenNoNotes{
+    margin-top: 10%;
+    color: grey;
+    font-size: 1.5rem !important;
+    font-weight: bolder;
+
+    align-items: center;
+    text-align: center;
+}
+
+/*Note component*/
+
+.singleNote{
+    background: #fff;
+  border-radius: 7px;
+  border:1px solid #dadce0;
+  padding: 10px;
+  width: 240px;
+  margin: 16px;
+  float: left;
+}
+
+.singleNote h1 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    white-space: pre-wrap;
+    border: none;
+    width: 100%;
+    word-wrap: break-word;
+  }
+.singleNote p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    border: none;
+    width: 100%;
+    outline: none;
+  }
+
+  .actionIcons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    float: right;
+  }
