@@ -1,8 +1,8 @@
 import express from "express";
-import SaveNote from "../Controllers/SaveNote.js";
+import saveSingleNote,{deleteNote, findAll, updateNote} from "../Controllers/NoteOperations.js";
 const routes = express.Router();
-routes.get("/",(req,res)=>{
-    SaveNote(req,res)
-});
-routes.get("/save",(req,res)=>{SaveNote(req,res)})
+routes.get("/",findAll);
+routes.post("/save",saveSingleNote);
+routes.post("/update",updateNote);
+routes.post("/delete",deleteNote);
 export default routes;
