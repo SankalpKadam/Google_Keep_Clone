@@ -12,7 +12,14 @@ function DisplayNotes(props) {
             </p>
             </div>
         :props.notesToDisplay.map((note)=>{
-            return <Note key={note._id} id={note._id} Title={note.Title} Content ={note.Content} deleteNote={props.deleteNote} editNote={props.editNote} entireNote={note}/>
+            return <Note 
+            key={note._id} 
+            id={note._id} 
+            Title={note.Title} 
+            Content ={note.Content} 
+            deleteNote={props.deleteNote} 
+            editNote={props.editNote} 
+            entireNote={note}/>
         })}
         </div>
     );

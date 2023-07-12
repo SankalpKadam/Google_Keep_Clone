@@ -4,7 +4,7 @@ import TakeNote from "../components/Notes/TakeNote.jsx";
 import SideBar from "../components/Notes/sideBar.jsx";
 import DisplayNotes from "./Notes/DisplayNotes.jsx";
 import Trash from "./Trash.jsx";
-import getNotes,{saveNote, deleteNote, updateNote} from "../utils/APIHandler.js";
+import getNotes,{saveNote, deleteNote, updateNote, deleteAllNotes} from "../utils/APIHandler.js";
 function App() {
     const [trashClicked, setTrashActive] = useState("Notes")
     function trashWasClicked(params){
@@ -16,6 +16,8 @@ function App() {
     },[]);
     
     const [notes, setNotes]=useState([]);
+    const [tempDeletedNotes, setDeletedNotes]=useState([]);
+    const [isDeleted, setDeleted]= useState(false)
     const [isNote, setIsNote]=useState(false);
     const [isEdit, setEdit]=useState(false);
     const [editTableNote ,setEditableNote]=useState({
@@ -28,7 +30,18 @@ function App() {
         setIsNote(true);
     }
     function removeNote(params){
-        deleteNote({_id: params}, setNotes)
+        const deletedNote=notes.filter(note=>{
+            return note._id === params
+        })
+        setDeletedNotes(prevNotes=>{
+            return [ ...deletedNote, ...prevNotes]
+        })
+        setNotes(prevNotes=>{
+            return prevNotes.filter(note=>{
+                return note._id !== params
+            })
+        })
+        setDeleted(true)
         console.log(notes, notes.length);
         if (notes.length===1){
             setIsNote(false)
@@ -49,13 +62,41 @@ function App() {
         updateNote(params, setNotes);
         setEdit(false);
     }
+
+    function restoreNote(params) {
+        setNotes(prevNotes=>{
+            return [params, ...prevNotes]
+        })
+        setDeletedNotes(prevNotes=>{
+            return prevNotes.filter(note=>{
+                return note._id !== params._id
+            })
+        })
+        console.log(tempDeletedNotes, tempDeletedNotes.length);
+
+        if (tempDeletedNotes.length===0){
+            setDeleted(false)
+        }
+        setIsNote(true)
+    }
+
+    function deleteAll(params){
+        console.log(params);
+        deleteAllNotes({idArray: params},setNotes)
+        setDeletedNotes([])
+        setDeleted(false)
+    }
     return (
         <div>
             <Header />
             <SideBar onClick={trashWasClicked}/>
-            {(trashClicked==="Trash") ?<Trash />:<div>
+            {(trashClicked==="Trash") ?<Trash deletedNotes={tempDeletedNotes} isdelete={isDeleted} restore={restoreNote} deleteAllNotes={deleteAll}/>:<div>
             <TakeNote onAddClick={addNote} editTable={isEdit} editNote={editNote} noteToFill={editTableNote}/>
-            <DisplayNotes notesToDisplay={notes} isNote={isNote} deleteNote={removeNote} editNote={edit}/>
+            <DisplayNotes 
+            notesToDisplay={notes} 
+            isNote={isNote} 
+            deleteNote={removeNote} 
+            editNote={edit}/>
             </div>}
             
         </div>

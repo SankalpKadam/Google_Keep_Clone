@@ -19,16 +19,6 @@ function Note(props) {
 
     return (
         <div className="singleNote" style={showActions ? hoverStyle : null} onMouseOver={showAvailableActions} onMouseOut={hideAvailableActions}>
-            {/* <input 
-            disabled={isEdit ? null:"disabled"} 
-            value={isEdit? newNote.Title : props.Title} 
-            onChange={handleChange}
-            />
-            <textarea 
-            disabled={isEdit ? null:"disabled"} 
-            value={isEdit?newNote.Content :props.Content}
-            onChange={handleChange}
-            /> */}
             <h1>{props.Title}</h1>
             <p>{props.Content}</p>
             {

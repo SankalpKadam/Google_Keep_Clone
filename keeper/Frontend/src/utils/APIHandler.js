@@ -14,7 +14,6 @@ async function getNotes(setNotes){
 
 async function saveNote(note, setNotes) {
     try {
-        // console.log(note);
         const res = await axios.post(`${BASE_URI}/save`,note);
         getNotes(setNotes)
     } catch (error) {
@@ -24,8 +23,7 @@ async function saveNote(note, setNotes) {
 
 async function deleteNote(note, setNotes) {
     try {
-        const res= await axios.post(`${BASE_URI}/delete`,note)
-        getNotes(setNotes)
+        await axios.post(`${BASE_URI}/delete`,note)
     } catch (error) {
         console.log(error.message);
         
@@ -39,5 +37,14 @@ async function updateNote(note, setNotes) {
         console.log(error.message);
     }
 }
+
+async function deleteAllNotes(idArray, setNotes) {
+    try {
+        const res = await axios.post(`${BASE_URI}/deleteAll`, idArray)
+        getNotes(setNotes)
+    } catch (error) {
+        console.log(error.message);
+    }
+}
 export default getNotes;
-export {saveNote, deleteNote, updateNote}
+export {saveNote, deleteNote, updateNote, deleteAllNotes}
