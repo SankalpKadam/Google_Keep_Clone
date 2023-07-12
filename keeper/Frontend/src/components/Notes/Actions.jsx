@@ -19,7 +19,7 @@ function Actions(props) {
       };
     return(
         <div className="actionIcons">
-        <Zoom in={true} appear={true} timeout={transitionDuration} unmountOnExit onClick={()=>props.editNote(props.id)}>
+        <Zoom in={true} appear={true} timeout={transitionDuration} unmountOnExit onClick={()=>props.editNote(props.entireNote)}>
 
             <Fab style={fabButton}>
                 <EditIcon style={{color:"grey",marginRight:"1.5rem"}}/>

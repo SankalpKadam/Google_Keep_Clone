@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import TextSnippetOutlinedIcon from '@mui/icons-material/TextSnippetOutlined';
 import Note from "./Note";
 function DisplayNotes(props) {
-    
-
-
     return (
         <div className="displayNotes">
         {!props.isNote ? 
@@ -14,8 +11,8 @@ function DisplayNotes(props) {
                 Notes you add appear here
             </p>
             </div>
-        :props.notesToDisplay.map((note,index)=>{
-            return <Note key={index} id={index} Title={note.Title} Content ={note.Content} deleteNote={props.deleteNote}/>
+        :props.notesToDisplay.map((note)=>{
+            return <Note key={note._id} id={note._id} Title={note.Title} Content ={note.Content} deleteNote={props.deleteNote} editNote={props.editNote} entireNote={note}/>
         })}
         </div>
     );

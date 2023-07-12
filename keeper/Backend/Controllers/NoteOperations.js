@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import singleNote from "../Models/NoteModel.js";
-import bodyParser from "body-parser";
+
 async function saveSingleNote(req,res) {
     console.log(req);
     const newNote = new singleNote({Title:req.body.Title, Content:req.body.Content});
@@ -11,6 +11,7 @@ async function saveSingleNote(req,res) {
 
 async function findAll(req, res) {
     try{
+        console.log("Find all called");
         const allNotes=await singleNote.find({})
         res.send(allNotes)
     }
@@ -20,13 +21,13 @@ async function findAll(req, res) {
 }
 
 async function updateNote(req,res) {
-    const updated = await singleNote.updateOne({Title: "My first note"},{Title: req.body.Title, Content:req.body.Content})
+    await singleNote.updateOne({_id: req.body._id},{Title: req.body.Title, Content:req.body.Content})
     .then(res.send("Record updated"))
     .catch(err=>console.log("Error while updating", err));
 }
 
 async function deleteNote(req, res) {
-    await singleNote.deleteOne({Title: req.body.Title})
+    await singleNote.deleteOne({_id:req.body._id})
     .then(res.send("Record Deleted successfully"))
     .catch(err => console.log("Error while deleting", err));
 }

@@ -2,29 +2,13 @@ import React,{useState} from "react";
 import Actions from "./Actions";
 function Note(props) {
     const [showActions,setAction]=useState(false)
-    const [isEdit,setEditable]=useState(false)
-    const [newNote,setNewNote]=useState({
-        Title:"",
-        Content:""
-    })
-    function editable(){
-        setEditable(true)
-
-    }
+    
     const hoverStyle={
         border:"none",
         boxShadow: "0px 0px 4px 4px #eee"
 
     }  
-    function handleChange(event) {
-        const {name ,value} = event.target;
-        setNewNote(prevNote=>{
-            return {
-                ...prevNote,
-                [name]: value
-            }
-        });
-    }
+    
 
     function showAvailableActions(event) {
         setAction(true)
@@ -48,7 +32,7 @@ function Note(props) {
             <h1>{props.Title}</h1>
             <p>{props.Content}</p>
             {
-                showActions ? <Actions id={props.id} deleteNote={props.deleteNote} editNote={editable}/> :<div style={{marginTop:"3rem"}}/>
+                showActions ? <Actions id={props.id} deleteNote={props.deleteNote} editNote={props.editNote} entireNote={props.entireNote}/> :<div style={{marginTop:"3rem"}}/>
             }
             
         </div>

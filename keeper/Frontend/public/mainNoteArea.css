@@ -11,6 +11,8 @@
     border: none;
     margin: 0.5rem 0.5rem;
     outline: none;
+    resize: none;
+
 }
 
 /*Sidebar component*/
