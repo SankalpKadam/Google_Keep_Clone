@@ -46,5 +46,16 @@ async function deleteAllNotes(idArray, setNotes) {
         console.log(error.message);
     }
 }
+
+async function getSearchTitle(TitleString,setNotes){
+    try {
+        await axios.post(`${BASE_URI}/find`, TitleString)
+        .then((res)=>setNotes(res.data))
+        .catch(err => console.log(err.message))
+        
+    } catch (error) {
+        console.log(error.message);
+    }
+}
 export default getNotes;
-export {saveNote, deleteNote, updateNote, deleteAllNotes}
+export {saveNote, deleteNote, updateNote, deleteAllNotes, getSearchTitle}

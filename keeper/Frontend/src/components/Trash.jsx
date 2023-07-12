@@ -31,7 +31,7 @@ function Trash(props) {
         <div className="displayNotes">
             {
                 !props.isdelete?
-                <div className="showWhenNoNotes">
+                <div className="showWhenNoNotes" style={{margin:"3rem auto"}}>
                 <DeleteOutlinedIcon  style={{display:"block", width:"100%", fontSize:"3rem"}}/>
                 <p style={{display:"block", width:"100%"}}>
                     Notes you delete appear here
@@ -39,7 +39,7 @@ function Trash(props) {
                 </div>
                 
             :  
-                <div>
+                <div style={{width:"100%"}}>
                 <p
                 style={{
                     textAlign:"center",

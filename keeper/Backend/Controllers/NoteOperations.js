@@ -19,6 +19,17 @@ async function findAll(req, res) {
     }
 }
 
+async function findMatching(req, res) {
+    try{
+        console.log(req.body);
+        const allNotes=await singleNote.find({Title:{$regex: req.body.Search, $options:"i"}})
+        res.send(allNotes)
+    }
+    catch(err){
+        console.log("Error in reading", err.message);
+    }
+}
+
 async function updateNote(req,res) {
     await singleNote.updateOne({_id: req.body._id},{Title: req.body.Title, Content:req.body.Content})
     .then(res.send("Record updated"))
@@ -38,4 +49,4 @@ async function deleteAllNotes(req,res) {
 
 
 export default saveSingleNote;
-export {findAll, updateNote, deleteNote, deleteAllNotes};
+export {findAll, updateNote, deleteNote, deleteAllNotes, findMatching};

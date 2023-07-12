@@ -6,6 +6,8 @@ import DisplayNotes from "./Notes/DisplayNotes.jsx";
 import Trash from "./Trash.jsx";
 import getNotes,{saveNote, deleteNote, updateNote, deleteAllNotes} from "../utils/APIHandler.js";
 function App() {
+
+    const [menuClicked,setMenuClicked]=useState(false)
     const [trashClicked, setTrashActive] = useState("Notes")
     function trashWasClicked(params){
         (params==="Trash") ? setTrashActive("Trash") : setTrashActive("Notes")  
@@ -86,18 +88,27 @@ function App() {
         setDeletedNotes([])
         setDeleted(false)
     }
+    
     return (
         <div>
-            <Header />
-            <SideBar onClick={trashWasClicked}/>
-            {(trashClicked==="Trash") ?<Trash deletedNotes={tempDeletedNotes} isdelete={isDeleted} restore={restoreNote} deleteAllNotes={deleteAll}/>:<div>
-            <TakeNote onAddClick={addNote} editTable={isEdit} editNote={editNote} noteToFill={editTableNote}/>
-            <DisplayNotes 
-            notesToDisplay={notes} 
-            isNote={isNote} 
-            deleteNote={removeNote} 
-            editNote={edit}/>
-            </div>}
+            <Header searchBar={setNotes} menuClick={setMenuClicked}/>
+            <div className="MainArea">
+
+            <SideBar onClick={trashWasClicked} style={{flex:"1"}} menu={menuClicked}/>
+            {   (trashClicked==="Trash") 
+                ? 
+                <Trash style={{width:"100%", alignItems:"center", justifyContent:"center"}} deletedNotes={tempDeletedNotes} isdelete={isDeleted} restore={restoreNote} deleteAllNotes={deleteAll}/>
+                :
+                <div style={{width:"100%", alignItems:"center", justifyContent:"center"}}>
+                <TakeNote onAddClick={addNote} editTable={isEdit} editNote={editNote} noteToFill={editTableNote}/>
+                <DisplayNotes 
+                notesToDisplay={notes} 
+                isNote={isNote} 
+                deleteNote={removeNote} 
+                editNote={edit}/>
+                </div>
+            }
+            </div>
             
         </div>
     );

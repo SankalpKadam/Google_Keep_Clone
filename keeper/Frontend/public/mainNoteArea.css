@@ -18,9 +18,20 @@
 /*Sidebar component*/
 .sideBar{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-bottom: 2px solid #dadce0;
+    flex-direction: column;
+    box-shadow: 2px 2px 4px #eee;
+}
+.sideBar p{
+  margin: .5rem;
+  min-width: 20vw;
+  border-radius: 10px;
+  margin-left: -1rem;
+}
+.flexMe{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
 }
 
 /*DisplayNotes component*/
@@ -30,21 +41,26 @@
     color: grey;
     font-size: 1.5rem !important;
     font-weight: bolder;
-
     align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
+/*DisplayNotes component*/
+.displayNotes{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 80vw;
+}
 /*Note component*/
 
 .singleNote{
-    background: #fff;
+  background: #fff;
   border-radius: 7px;
   border:1px solid #dadce0;
-  padding: 10px;
-  width: 240px;
-  margin: 16px;
-  float: left;
+  width: 20%;
+  margin: 2rem .6rem;
 }
 
 .singleNote h1 {
@@ -53,6 +69,7 @@
     white-space: pre-wrap;
     border: none;
     width: 100%;
+    font-weight: bold;
     word-wrap: break-word;
   }
 .singleNote p {
@@ -70,4 +87,12 @@
     flex-direction: row;
     justify-content: space-around;
     float: right;
+  }
+
+  /*Main area in App component*/
+  .MainArea{
+    display: flex;
+    direction: row;
+    width: 100vw;
+    height: 100vh;
   }

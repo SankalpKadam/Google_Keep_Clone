@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import SearchIcon from '@mui/icons-material/Search';
@@ -6,9 +6,16 @@ import RefreshIcon from '@mui/icons-material/Refresh';
 import Fab from '@mui/material/Fab';
 import AccountData from "./Account";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import {getSearchTitle} from "../../utils/APIHandler"
 
+function Header(props){
 
-function Header(){
+    const [searchValue, setSearchValue]=useState({
+        Search:""
+    });
+    useEffect(()=>{
+        getSearchTitle(searchValue,props.searchBar)
+    },[searchValue])
     const bulbIconStyle={
         color : "#fbbc04",
         borderRadius : "10%",
@@ -36,9 +43,20 @@ function Header(){
         boxShadow: "none",
         color:"grey"
     }
+
+    function searchInputString(event) {
+        const {name,value}= event.target
+        setSearchValue(prev=>{
+            return {
+                [name]:value
+            }
+
+        });
+    }
+
     return(
         <header>
-                <MenuIcon style={menu}/>
+                <MenuIcon style={menu} onClick={()=>{props.menuClick(true)}}/>
                 <div style={{padding:".5rem 0"}}>
                     <LightbulbIcon style={bulbIconStyle}/>
                     <h1 className="headerText">Keep</h1>
@@ -47,7 +65,7 @@ function Header(){
                 <Fab style={searchButton}>
                 <SearchIcon />
                 </Fab>
-                <input  placeholder="Search .." style={searchInput}/>
+                <input  placeholder="Search .." name="Search" style={searchInput} onChange={searchInputString} value={searchValue.Search}/>
                 </div>
             <div className="settingsInHeader">
                 <RefreshIcon style={{margin:"0rem .5rem", height:"100%"}}/>
