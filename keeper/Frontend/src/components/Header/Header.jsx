@@ -69,7 +69,8 @@ function Header(props){
                 </div>
             <div className="settingsInHeader">
                 <RefreshIcon style={{margin:"0rem .5rem", height:"100%"}}/>
-                <AccountCircleIcon style={{margin:"0rem 1.5rem", height:"100%"}}/>
+                <AccountData style={{margin:"0rem 1.5rem", height:"100%"}}/>
+                {/* <AccountCircleIcon style={{margin:"0rem 1.5rem", height:"100%"}}/> */}
             </div>
             
         </header>
