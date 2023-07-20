@@ -1,0 +1,539 @@
+.mainArea{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .sideBar{
+        width: 20%;
+        height: 100%;
+        background-color: #ffffff;
+        box-shadow: 2px 2px 10px #eee;
+    }
+    .mSideBar{
+        width: 20%;
+        height: 100%;
+    }
+    .menuIcon{
+        display: flex;
+        padding-left: 1rem;
+        margin-top: 1rem;
+    }
+    .menuItem{
+        padding-left: 3rem;
+        margin-left: -1rem;
+        margin-top: .1rem;
+        display: flex;
+        background-color: #feefc3;
+        border-radius: 30px;
+        justify-content: space-between;
+        width: 70%;
+    }
+    .menuItem p{
+        width: 60%;
+        text-align: center;
+    }
+    .menuItem:hover{
+        background-color: #eee;
+        cursor: pointer;
+    }
+    #NoteTakingArea{
+        width: 90%;
+        height: 100%;
+
+    }
+    .createNewNote{
+        display: flex;
+        flex-direction: column;
+        margin: 1rem auto;
+        border-radius: 10px;
+        border: 1px solid #eee;
+        box-shadow: 0px 0px 4px 4px #eee;
+        width: 80%;
+    }
+    .createNewNote input{
+        font-size: 1rem;
+        border: none;
+        margin: 0.5rem 0.5rem;
+        outline: none;
+        resize: none;  
+    }
+    .createNewNote textarea{
+        font-size: 1rem;
+        font-weight: 500;
+        color: black;
+        outline: none;
+        border: none;
+        resize: none;
+        margin: 0.5rem 0.5rem;
+
+    }
+    #fabButton{
+        background-color: #fbbc04;
+        color:white;
+        float:right;
+        position:absolute;
+        top:26%;
+        right:22%
+    }
+    .showWhenNoNotes{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top:10%;
+        width: 100%;
+        font-size: 2rem;
+        font-weight: 500;
+        color: rgb(168, 165, 165);
+    }
+    .displayNotes{
+        width: 100%;
+        /* height: 100%; */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+    }
+    .singleNote{
+        margin: .5rem;
+        height: 30%;
+        width: 100%;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: .5rem;
+    }
+
+    .singleNote h1{
+        font-size: 1.5rem;
+        font-style: italic;
+        font-weight: 500;
+    }
+
+    .singleNote p{
+        font-size: 1rem;
+        color: grey;
+    }
+    .actionIcons{
+        float: right;
+    }
+    .menuBar{
+        display: flex;
+        position: absolute;
+        top: 10vh;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        padding: 0 1rem 0 0;
+        z-index: 3;
+        transition: left 250ms;
+    }
+    .OptionsPalette{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+ }
+
+ /* Small devices (portrait tablets and large phones, 600px and up) */
+ @media only screen and (min-width: 600px) {
+    .sideBar{
+        width: 20%;
+        height: 100%;
+        background-color: #ffffff;
+        box-shadow: 2px 2px 10px #eee;
+    }
+    .mSideBar{
+        width: 20%;
+        height: 100%;
+    }
+    .menuIcon{
+        display: flex;
+        padding-left: 1rem;
+        margin-top: 1rem;
+    }
+    .menuItem{
+        padding-left: 3rem;
+        margin-left: -1rem;
+        margin-top: .1rem;
+        display: flex;
+        background-color: #feefc3;
+        border-radius: 30px;
+        justify-content: space-between;
+        width: 75%;
+    }
+    .menuItem p{
+        width: 60%;
+        text-align: center;
+    }
+    .menuItem:hover{
+        background-color: #eee;
+        cursor: pointer;
+    }
+    .createNewNote{
+        display: flex;
+        flex-direction: column;
+        margin: 1rem auto;
+        border-radius: 10px;
+        border: 1px solid #eee;
+        box-shadow: 0px 0px 4px 4px #eee;
+        width: 80%;
+    }
+    .createNewNote input{
+        font-size: 1.5rem;
+        border: none;
+        margin: 0.5rem 0.5rem;
+        outline: none;
+        resize: none;
+    
+    }
+    .createNewNote textarea{
+        font-size: 1rem;
+        font-weight: 500;
+        color: black;
+        outline: none;
+        border: none;
+        resize: none;
+        margin: 0.5rem 0.5rem;
+
+    }
+    #NoteTakingArea{
+        width: 90%;
+        height: 100%;
+    }
+    #fabButton{
+        background-color: #fbbc04;
+        color:white;
+        float:right;
+        position:absolute;
+        top:30%;
+        right:26%
+    }
+     
+    .showWhenNoNotes{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top:10%;
+        width: 100%;
+        font-size: 2rem;
+        font-weight: 500;
+        color: rgb(168, 165, 165);
+    }
+    .displayNotes{
+        width: 100%;
+        /* height: 100%; */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+    }
+    .singleNote{
+        margin: .5rem;
+        height: 30%;
+        width: 40%;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: .5rem;
+    }
+
+    .singleNote h1{
+        font-size: 1.5rem;
+        font-style: italic;
+        font-weight: 500;
+    }
+
+    .singleNote p{
+        font-size: 1rem;
+        color: grey;
+    }
+    .actionIcons{
+        float: right;
+    }
+    .menuBar{
+        display: flex;
+        position: absolute;
+        top: 10vh;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        padding: 0 1rem 0 0;
+        z-index: 3;
+        transition: left 250ms;
+    }
+    .OptionsPalette{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+ }
+ 
+ /* Medium devices (landscape tablets, 768px and up) */
+ @media only screen and (min-width: 768px) {
+    .sideBar{
+        width: 20%;
+        height: 100%;
+        background-color: #ffffff;
+        box-shadow: 2px 2px 10px #eee;
+    }
+    .mSideBar{
+        width: 20%;
+        height: 100%;
+    }
+    .menuIcon{
+        display: flex;
+        padding-left: 1rem;
+        margin-top: 1rem;
+    }
+    .menuItem{
+        padding-left: 3rem;
+        margin-left: -1rem;
+        margin-top: .1rem;
+        display: flex;
+        background-color: #feefc3;
+        border-radius: 30px;
+        justify-content: space-between;
+        width: 80%;
+    }
+    .menuItem p{
+        width: 60%;
+        text-align: center;
+    }
+    .menuItem:hover{
+        background-color: #eee;
+        cursor: pointer;
+    }
+    .createNewNote{
+        display: flex;
+        flex-direction: column;
+        margin: 1rem auto;
+        border-radius: 10px;
+        border: 1px solid #eee;
+        box-shadow: 0px 0px 4px 4px #eee;
+        width: 50%;
+    }
+    .createNewNote input{
+        font-size: 1.5rem;
+        border: none;
+        margin: 0.5rem 0.5rem;
+        outline: none;
+        resize: none;
+    
+    }
+    .createNewNote textarea{
+        font-size: 1rem;
+        font-weight: 500;
+        color: black;
+        outline: none;
+        border: none;
+        resize: none;
+        margin: 0.5rem 0.5rem;
+
+    }
+    #NoteTakingArea{
+        width: 90%;
+        height: 100%;
+    }
+    #fabButton{
+        background-color: #fbbc04;
+        color:white;
+        float:right;
+        position:absolute;
+        top:26%;
+        right:22%
+    }
+    .showWhenNoNotes{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top:10%;
+        width: 100%;
+        font-size: 2rem;
+        font-weight: 500;
+        color: rgb(168, 165, 165);
+    }
+    .displayNotes{
+        width: 100%;
+        /* height: 100%; */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+    }
+    .singleNote{
+        margin: .5rem;
+        height: 30%;
+        width: 25%;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: .5rem;
+    }
+
+    .singleNote h1{
+        font-size: 1.5rem;
+        font-style: italic;
+        font-weight: 500;
+    }
+
+    .singleNote p{
+        font-size: 1rem;
+        color: grey;
+    }
+    .actionIcons{
+        float: right;
+    }
+    .menuBar{
+        display: flex;
+        position: absolute;
+        top: 10vh;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        padding: 0 1rem 0 0;
+        z-index: 3;
+        transition: left 250ms;
+    }
+    .OptionsPalette{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+ }
+ 
+ /* Large devices (laptops/desktops, 992px and up) */
+ @media only screen and (min-width: 992px) {
+    .sideBar{
+        width: 20%;
+        height: 100%;
+        background-color: #ffffff;
+        box-shadow: 2px 2px 10px #eee;
+    }
+    
+    
+
+    .menuItem{
+        padding-left: 3rem;
+        margin-left: -1rem;
+        margin-top: .1rem;
+        display: flex;
+        background-color: #feefc3;
+        border-radius: 30px;
+        justify-content: space-between;
+        width: 85%;
+    }
+    .menuItem p{
+        width: 60%;
+        text-align: center;
+    }
+    .menuItem:hover{
+        background-color: #eee;
+        cursor: pointer;
+    }
+
+    .createNewNote{
+        display: flex;
+        flex-direction: column;
+        margin: 1rem auto;
+        border-radius: 10px;
+        border: 1px solid #eee;
+        box-shadow: 0px 0px 2px 2px #eee;
+        font-family: inherit;
+        width: 50%;
+    }
+    .createNewNote input{
+        font-size: 1.2rem;
+        border: none;
+        margin: 0.5rem 0.5rem;
+        outline: none;
+        resize: none;
+    }
+
+    .createNewNote textarea{
+        font-size: 1rem;
+        font-weight: 500;
+        color: black;
+        outline: none;
+        border: none;
+        resize: none;
+        margin: 0.5rem 0.5rem;
+
+    }
+    #NoteTakingArea{
+        width: 90%;
+        height: 100%;
+        align-items: center;
+    }
+    #fabButton{
+        background-color: #fbbc04;
+        color:white;
+        float:right;
+        position:absolute;
+        top:30%;
+        right:22%;
+    }
+
+    .showWhenNoNotes{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top:10%;
+        width: 100%;
+        font-size: 2rem;
+        font-weight: 500;
+        color: rgb(168, 165, 165);
+    }
+    .displayNotes{
+        width: 100%;
+        /* height: 100%; */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 1.5rem;
+        align-items: center;
+        padding-left: 2rem;
+    }
+    .singleNote{
+        margin: .5rem;
+        height: 30%;
+        width: 20%;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: .5rem;
+    }
+
+    .singleNote h1{
+        font-size: 1.5rem;
+        font-style: italic;
+        font-weight: 500;
+    }
+
+    .singleNote p{
+        font-size: 1rem;
+        color: grey;
+    }
+    .actionIcons{
+        float: right;
+    }
+
+    .menuBar{
+        display: flex;
+        position: absolute;
+        top: 10vh;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        padding: 0 1rem 0 0;
+        z-index: 3;
+        transition: left 250ms;
+    }
+    
+
+    .OptionsPalette{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+ }

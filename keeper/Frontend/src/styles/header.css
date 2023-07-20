@@ -1,0 +1,231 @@
+header {
+    display: flex;
+    width: 100vw;
+    height: 10vh;
+    border-bottom: 1px solid #dadce0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ /* Extra small devices (phones, 600px and down) */
+ @media only screen and (max-width: 600px) {
+    #searchBar{
+        width: 25%;
+        height: 100%;
+        align-items: center;
+        margin-top: 1rem;
+        display: block;
+        padding: 1rem;
+    }
+    .searchInput{
+        background-color: #f1f3f4;
+        height: 70%;
+        border-radius: 10px;
+    }
+    .searchInput input{
+        width: 50%;
+        outline: none;
+        border: none;
+        font-size: 1.2rem;
+        height: 95%;
+        background-color: #f1f3f4;
+    }
+    #menu{
+        width: 10%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        padding-left: .2rem;
+    }
+    #logo{
+        width: 10%;
+        height: 100%;
+        text-align: center;
+        align-items: center;
+        margin: auto 0;
+        display: flex;
+        font-size: 1rem;
+    }
+    #controls{
+        width: 20%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+    }
+    .bulbIconStyle{
+        color : #fbbc04;
+        border-radius : 10%;
+        margin-right : .2rem;
+        height:10%;
+    }
+ }
+
+ /* Small devices (portrait tablets and large phones, 600px and up) */
+ @media only screen and (min-width: 600px) {
+    #searchBar{
+        width: 60%;
+        height: 100%;
+        align-items: center;
+        margin-top: 1rem;
+        display: block;
+        padding: 1rem;
+    }
+    .searchInput{
+        background-color: #f1f3f4;
+        height: 70%;
+        border-radius: 10px;
+    }
+    .searchInput input{
+        width: 88%;
+        outline: none;
+        border: none;
+        font-size: 1.2rem;
+        height: 95%;
+        background-color: #f1f3f4;
+    }
+    #menu{
+        width: 10%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        padding-left: 2rem;
+    }
+    #logo{
+        width: 10%;
+        height: 100%;
+        text-align: center;
+        align-items: center;
+        margin: auto 0;
+        display: flex;
+        font-size: 1.2rem;
+    }
+    #controls{
+        width: 20%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+    }
+    .bulbIconStyle{
+        color : #fbbc04;
+        border-radius : 10%;
+        margin-right : .2rem;
+        height:10%;
+    }
+ }
+ 
+ /* Medium devices (landscape tablets, 768px and up) */
+ @media only screen and (min-width: 768px) {
+    #searchBar{
+        width: 60%;
+        height: 100%;
+        align-items: center;
+        margin-top: 1rem;
+        display: block;
+        padding: 1rem;
+    }
+    .searchInput{
+        background-color: #f1f3f4;
+        height: 70%;
+        border-radius: 10px;
+    }
+    .searchInput input{
+        width: 88%;
+        outline: none;
+        border: none;
+        font-size: 1.2rem;
+        height: 95%;
+        background-color: #f1f3f4;
+    }
+    #menu{
+        width: 10%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        padding-left: 2rem;
+    }
+    #logo{
+        width: 10%;
+        height: 100%;
+        text-align: center;
+        align-items: center;
+        margin: auto 0;
+        display: flex;
+        font-size: 1.2rem;
+    }
+    #controls{
+        width: 20%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+    }
+    .bulbIconStyle{
+        color : #fbbc04;
+        border-radius : 10%;
+        margin-right : .2rem;
+        height:10%;
+    }
+ }
+ 
+ /* Large devices (laptops/desktops, 992px and up) */
+ @media only screen and (min-width: 992px) {
+    #searchBar{
+        width: 60%;
+        height: 100%;
+        align-items: center;
+        margin-top: 1rem;
+        display: block;
+    }
+    .searchInput{
+        background-color: #f1f3f4;
+        height: 70%;
+        border-radius: 10px;
+    }
+    .searchInput input{
+        width: 88%;
+        outline: none;
+        border: none;
+        font-size: 1.2rem;
+        height: 95%;
+        background-color: #f1f3f4;
+    }
+    #menu{
+        width: 10%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        padding-left: 2rem;
+    }
+    #logo{
+        width: 10%;
+        height: 100%;
+        text-align: center;
+        align-items: center;
+        margin: auto 0;
+        display: flex;
+        font-size: 1.5rem;
+    }
+    #controls{
+        width: 20%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: .5rem;
+    }
+    .bulbIconStyle{
+        color : #fbbc04;
+        border-radius : 10%;
+        margin-right : .2rem;
+        height:40px;
+    }
+ } 

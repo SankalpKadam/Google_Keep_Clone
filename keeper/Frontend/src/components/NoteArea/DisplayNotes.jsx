@@ -6,8 +6,8 @@ function DisplayNotes(props) {
         <div className="displayNotes">
         {!props.isNote ? 
             <div className="showWhenNoNotes">
-            <TextSnippetOutlinedIcon  style={{display:"block", width:"100%", fontSize:"3rem"}}/>
-            <p style={{display:"block", width:"100%"}}>
+            <TextSnippetOutlinedIcon />
+            <p >
                 Notes you add appear here
             </p>
             </div>

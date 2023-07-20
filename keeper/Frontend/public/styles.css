@@ -1,4 +1,4 @@
-* {
+body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -9,48 +9,3 @@
   body {
     background: #ffffff;
   }
-
-  header{
-    display:flex;
-    flex-direction: row;
-    height: 60px;
-    justify-content: space-between;
-    border-bottom: 2px solid #dadce0;
-  }
-  
-
-  .headerText{
-    font-size: 1.3rem;
-    display: inline-block;
-    align-items: center;
-    height: 40px;
-    position: relative;
-    top:-25%;
-  }
-
-  .searchBar{
-    background-color: #f1f3f4;
-    width:70%;
-    margin: .25rem .5rem;
-    height: 80%;
-    outline: none;
-    font-size: 1.5rem;
-    border-radius: 10px;
-    border: 1px solid #eee;
-    box-shadow: 2px 2px 5px #eee;
-  }
-
-  .settingsInHeader{
-    padding: .5rem;
-  }
-
-  .userAccountDetails{
-    box-shadow: 2px 2px 5px #eee;
-    border: 1px solid #f1f3f4;
-    background-color: #ffffff;
-    position: absolute;
-    top:50px;
-    right:10px;
-  }
-
-  /*Create new Note div*/

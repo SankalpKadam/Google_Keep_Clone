@@ -22,7 +22,7 @@ function Note(props) {
             <h1>{props.Title}</h1>
             <p>{props.Content}</p>
             {
-                showActions ? <Actions id={props.id} deleteNote={props.deleteNote} editNote={props.editNote} entireNote={props.entireNote}/> :<div style={{marginTop:"3rem"}}/>
+                showActions ? <Actions id={props._id} deleteNote={props.deleteNote} editNote={props.editNote} entireNote={props.entireNote}/> :<div style={{marginTop:"3rem"}}/>
             }
             
         </div>
