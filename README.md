@@ -24,8 +24,8 @@ User specific note handling.
   3] Use "npm start" to start the frontend.
 ```
 # Backend :
+```bash
   1] Install necessary npm packages using "npm install".
   2] Make sure mongodb is installed and ensure that mongodb is active. If you are using linux use "sudo   systemctl start mongod" to start mongodb on local environment.
   3] Navigate to the backend folder and start the server using "nodemon server.js".
-
-## Note: The project might not run exactly as expected since its still in development.
+```
