@@ -19,7 +19,7 @@ User specific note handling.
 
 # Frontend :
 ```bash
-  1] Install necessary npm packages using npm install.
+  1] Install necessary npm packages using "npm install".
   2] Make sure the server is started.
   3] Use "npm start" to start the frontend.
 ```
